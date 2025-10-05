@@ -1,0 +1,6 @@
+Robust Semantic Segmentation of Wafer Transmission Electron Micoscopy Image Using Multi-Task Learning with Edge Detection
+
+- Masked autoencoder with multi-task pretraining
+
+- Pre-training phase with self-supervised representation learning
+- Multi-tasl learning based fine tuning

@@ -1,0 +1,1 @@
+(SEM OR "scanning electron microscope") AND (polygon OR "contour extraction" OR annotation OR annotated) AND ("fine tuning" OR PEFT OR "low rank adapter" OR lora) AND (segmentation OR "edge detection") AND ("plasma etch" OR "silicon wafer" OR trench OR semiconductor)
