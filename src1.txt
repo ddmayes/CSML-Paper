@@ -1,0 +1,13 @@
+Automated image segmentatin of scanning electron microscopy images of graphene using U-Net Neural Network
+
+-   Distinguish between pixels in SEM images that correspoind to regions where graphene is and is not present -> material detection
+
+- 90 image dataset with data augmentation (labeled)
+
+- Higher quality data is better than higher quantity
+
+- Classification accuracy of over 90% and F1 score of over 80%
+
+- Transfer learning indications (domain adaptation)
+
+- 
