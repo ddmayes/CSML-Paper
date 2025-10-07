@@ -1,3 +1,0 @@
-Few-Shot AI Segmentation of Semiconductor Device FIB-SEM Tomography Data
-
-- 
