@@ -88,3 +88,35 @@ Automated measurement method based on deep learning for cross-sectional SEM imag
     Object detection and determination of coordinates
     Semantic segmentation for obtaining boundaries
  - 240x faster than manual annotation
+
+- DCNN approach (to the best of their knowledge there is no automated feature profile measurement)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Deep learning contour-based method for semi-automatic annotation of manufactured objects in electron microscopy images
+
+This paper talks a good amount about existing approaches
+
+- Semi-automated method of annotation of items in electron microscopy images
+- MRE less than 10% and r > 90%
+- Constrained Dynamic Match Loss (C-DML)
+- Segmentation-assisted approach that demploys a contour-based model
+- User draw bounding boxes (I will draw polygons)
+- Existing deep learning models are typically fully supervised
+
+- Why classical methods fall short: low-contrast edges and artifacts, existing models are trained on everyday
+   images and not as suitable for microscopy
+- Base used E2EC, SAM also good but required more compute to be fine-tuned. They fine tune E2EC
+- They have contributed a special loss function that is specific to account to physical
+   priors of electron microscopy
+
+Experiment:
+    - https://b2share.eudat.eu/records/19cc2afd23e34b92b36a1dfd0113a89f
+    - https://www.nature.com/articles/sdata2018172
+
+Results:
+    - 1244 images using COCO pre-trained weights and using their custom C-DML loss
+    - In semiconductor industry, a model or algorithm could be considered reliable enough when achieving
+       a r > 0.9 and MRE < 0.1
+    - First examine the SOTA contour based models: E2EC and Deep Snake
+    - Their approach did well on wire and pillar objects
