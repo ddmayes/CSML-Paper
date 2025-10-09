@@ -120,3 +120,43 @@ Results:
        a r > 0.9 and MRE < 0.1
     - First examine the SOTA contour based models: E2EC and Deep Snake
     - Their approach did well on wire and pillar objects
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Deep learning for fast segmentation and critical dimension metrology & characterization enabling AR/VR design and fabrication
+
+- Fine tuning of SAM with LORA 
+- CD extraction model from cross sectional images of surface relief gratings (SRGs) and fresnel lens
+
+Intro: 
+    Step 1: Segmentation of ROIs (regions of interest)
+    - Mask-RCNN are too computationally intensive
+Results:
+    - Binarize the image into ROIs and then overlay this on the orignal image to show the contours
+    - IOU score measusres the similarity between the binary masks produced by the model and the ground truth
+    - semSAM works on SEM, TEM, and STEM imaging techniques will good results. Also FIB instead of fresnel lens
+    - Can segment multiple classes with single SEM image
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Deep learning's impact on contour extraction for Design Based Metrology and Design Based Inspection
+
+Deep learning approach to contour extraction possess high noise immunity and excellent pattern recognition ability
+- Annotation operation of SEM iamges, training, and extraction
+
+Intro:
+    CD, OPC (optical proximity correctoin), EPE (edge placement error)
+    - Usage with low-SN SEM images
+
+Method:
+    - Semantic segmentation for contour extraction which can handle shapes of arbitrary complexity
+    - Offline annotation and training, onlin contour extraction.
+    - Annotation: label is assigned to every pixel in the SEM image
+    - Training: Fully Convolutional Network is used
+
+Experiment:
+    - Performance used contour extraction ratio: evaluates image wise contour extraction
+        First,  thinning  image  processing is 
+        done to contours in a segmented image and an annotation datum. Then, each contour in a segmented image is compared 
+        manually  to  corresponding  contour  in  the  annotation  datum.  If  there  is  any  false  negative  concatenated  more  than  3 
+        pixels or false positive concatenated more than 10 pixels, the contour is NG. If there is any NG contour, the segmented 
+        image is NG, otherwise OK. Contour extraction ratio is calculated by percentage of OK to amount of segmented images.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
