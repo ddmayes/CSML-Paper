@@ -1,4 +1,9 @@
-An effective method of contour extraction for SEM image based on DCNN
+Scanning electron microscopy (SEM)
+Transmission electron microscopy (TEM)
+Focused ion beam-scanning electron microsopy (FIB-SEM)
+Semantic segmentation
+
+1. An effective method of contour extraction for SEM image based on DCNN
 
 - Machine learning based method for contour extraction of SEM images
 - Custom built DCNN
@@ -38,7 +43,7 @@ T. Zhou et al., "An effective method of contour extraction for SEM image based o
   doi={10.1109/IWAPS51164.2020.9286798}}
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Annotating Object Instances with Polygon-RNN
+2. Annotating Object Instances with Polygon-RNN
 
 - Semi-automatic annotation of object Instances
 - We cast this as POLYGON PREDICTION task rathter than pixel labeling
@@ -70,7 +75,7 @@ L. Castrejón, K. Kundu, R. Urtasun and S. Fidler, "Annotating Object Instances 
   doi={10.1109/CVPR.2017.477}}
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Automated image segmentation of scanning electron microscopy images of graphene using U-Net Neural Network
+3. Automated image segmentation of scanning electron microscopy images of graphene using U-Net Neural Network
 
 - Distingushes between regions where graphene is and is not present
 - Utilizes U-Net
@@ -79,9 +84,21 @@ Automated image segmentation of scanning electron microscopy images of graphene 
 - Classification accuracy of over 90%
 - Materials detection (future work mention in my paper)
 
+@article{SHAH2023106127,
+title = {Automated image segmentation of scanning electron microscopy images of graphene using U-Net Neural Network},
+journal = {Materials Today Communications},
+volume = {35},
+pages = {106127},
+year = {2023},
+issn = {2352-4928},
+doi = {https://doi.org/10.1016/j.mtcomm.2023.106127},
+url = {https://www.sciencedirect.com/science/article/pii/S2352492823008188},
+author = {Aagam Shah and Joshua A. Schiller and Isiah Ramos and James Serrano and Darren K. Adams and Sameh Tawfick and Elif Ertekin},
+keywords = {Graphene, Scanning electron microscopy, Machine learning, Chemical vapor deposition},
+}
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Automated measurement method based on deep learning for cross-sectional SEM images of semiconductor devices
-
+4. Automated measurement method based on deep learning for cross-sectional SEM images of semiconductor devices
+- (i) etch recipe plan (ii) etching test samples using planned recipes (iii) observe cross sectional SEM images of etch samples (iv) measuring feature pro
 - Automated method of feature length measurement in cross-sectional SEM images of semiconductors
 - Trench patterns
 - Task casting
@@ -90,10 +107,36 @@ Automated measurement method based on deep learning for cross-sectional SEM imag
  - 240x faster than manual annotation
 
 - DCNN approach (to the best of their knowledge there is no automated feature profile measurement)
+Datasets:
+    training:validation:testing 90:20:13
+    CONTAINS DATA I USED
+Method:
+    Object detection (determine the coordinates of each unui tof a pattern) and segmentic segmentation techniques (obtain the boundaries of each area)
+Results:
+    Object detection/classification
+        Faster R-CNN + data augmentation (random horizontal flipping)
+        VGG-16 pretrained model with PASCAL VOC 2007 dataset finetuned
+    Segmentation 
+        used data augmentation with random cropping and horizontal flipping
+        much longer training time (8h)
+    Actually performs measurements based on segmented and extracted contours
+    Suggests future work for data-efficient semantic-segmentation (semi-supervised, self-supervised)
 
-
+@article{Okuyama_2023,
+doi = {10.35848/1347-4065/ac923d},
+url = {https://doi.org/10.35848/1347-4065/ac923d},
+year = {2022},
+month = {nov},
+publisher = {IOP Publishing},
+volume = {62},
+number = {SA},
+pages = {SA1016},
+author = {Okuyama, Yutaka and Ohmori, Takeshi},
+title = {Automated measurement method based on deep learning for cross-sectional SEM images of semiconductor devices},
+journal = {Japanese Journal of Applied Physics},
+}
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Deep learning contour-based method for semi-automatic annotation of manufactured objects in electron microscopy images
+5. Deep learning contour-based method for semi-automatic annotation of manufactured objects in electron microscopy images
 
 This paper talks a good amount about existing approaches
 
@@ -121,8 +164,21 @@ Results:
     - First examine the SOTA contour based models: E2EC and Deep Snake
     - Their approach did well on wire and pillar objects
 
+@article{10.1117/1.JEI.33.3.031204,
+author = {Isaac Wilfried Sanou and Julien Baderot and St{\'e}phanie Bricq and Yannick Benezeth and Franck Marzani and Sergio Martinez and Johann Foucher},
+title = {{Deep learning contour-based method for semi-automatic annotation of manufactured objects in electron microscopy images}},
+volume = {33},
+journal = {Journal of Electronic Imaging},
+number = {3},
+publisher = {SPIE},
+pages = {031204},
+keywords = {annotation, metrology, electron microscopy images, deep learning, segmentation, Electron microscopy, Education and training, Metrology, Deep learning, Image segmentation, Laser sintering, Contour modeling, Manufacturing, Semiconductors, Performance modeling},
+year = {2024},
+doi = {10.1117/1.JEI.33.3.031204},
+URL = {https://doi.org/10.1117/1.JEI.33.3.031204}
+}
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Deep learning for fast segmentation and critical dimension metrology & characterization enabling AR/VR design and fabrication
+6. Deep learning for fast segmentation and critical dimension metrology & characterization enabling AR/VR design and fabrication
 
 - Fine tuning of SAM with LORA 
 - CD extraction model from cross sectional images of surface relief gratings (SRGs) and fresnel lens
@@ -136,8 +192,17 @@ Results:
     - semSAM works on SEM, TEM, and STEM imaging techniques will good results. Also FIB instead of fresnel lens
     - Can segment multiple classes with single SEM image
 
+@misc{chaudhary2024deeplearningfastsegmentation,
+      title={Deep learning for fast segmentation and critical dimension metrology & characterization enabling AR/VR design and fabrication}, 
+      author={Kundan Chaudhary and Subhei Shaar and Raja Muthinti},
+      year={2024},
+      eprint={2409.13951},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2409.13951}, 
+}
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Deep learning's impact on contour extraction for Design Based Metrology and Design Based Inspection
+7. Deep learning's impact on contour extraction for Design Based Metrology and Design Based Inspection
 
 Deep learning approach to contour extraction possess high noise immunity and excellent pattern recognition ability
 - Annotation operation of SEM iamges, training, and extraction
@@ -159,4 +224,148 @@ Experiment:
         manually  to  corresponding  contour  in  the  annotation  datum.  If  there  is  any  false  negative  concatenated  more  than  3 
         pixels or false positive concatenated more than 10 pixels, the contour is NG. If there is any NG contour, the segmented 
         image is NG, otherwise OK. Contour extraction ratio is calculated by percentage of OK to amount of segmented images.
+
+@inproceedings{10.1117/12.2514898,
+author = {Ryo Yumiba and Masayoshi Ishikawa and Shinichi Shinoda and Shigetoshi Sakimura and Yasutaka Toyoda and Hiroyuki Shindo and Masayuki Izawa},
+title = {{Deep learning's impact on contour extraction for design based metrology and design based inspection}},
+volume = {10959},
+booktitle = {Metrology, Inspection, and Process Control for Microlithography XXXIII},
+editor = {Vladimir A. Ukraintsev and Ofer Adan},
+organization = {International Society for Optics and Photonics},
+publisher = {SPIE},
+pages = {1095912},
+keywords = {Deep Learning, Design Based Metrology, DBM, Design Based Metrology System, DBMs, Contour , SEM},
+year = {2019},
+doi = {10.1117/12.2514898},
+URL = {https://doi.org/10.1117/12.2514898}
+}
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. Deep-learning-driven automation of inner and outer object segmentation in SEM/TEM imaging for semiconductor metrology
+
+Intro:
+    Quality of annotation directly affects the models ability to learn and generalize
+    SEM and TEM have lost contrast boundaries, shadows, textures that pose unique challenges
+SOTA:
+    Discusses classical approaches (energy minimization (snakes), watershed, graph cuts (grabcut), edge detection/thresholding)
+    DL approaches (CNN, transformers, generalized segmentation, unsupervised + supervised)
+Proposed new model:
+    Multi-task training (for inner and outer)
+    Dice loss, BCE, boundary loss weighted sum
+    Enhanced edge detection for TEM
+    Post processing global contour refinement
+Architecture
+    Builds on OneFormer: transformer for semantic, instance, panoptic segmentation
+    Data augmentation: random rotations, flips, contrast adjustments, gaussian noise are added to increase the diversity of training data
+    Sequential training: semantic segmentation task
+    Selective weighting: specific loss linear comb
+    CONTAINS LOSS FUNCTIONS
+Datasets:
+    100 training images containing 2467 objects total
+    15 annotated test images containing 421 objects total
+    Contains synthetic and real world images
+        Synthetic used to test extreme scenarios (very thin inner objects or overlapping boundaries)
+Results:
+    Compared to OneFormer, baseline. Evaluated via the percent of succesffult detected items and the measurements
+    Necessity of fine-tuning for domain adaptation. OneFormer has strong generalization capabilities, and still cannot perform better than fine-tuned
+Conclustion:
+    Contrast aware attention, bounardy loss funcitons
+
+@article{10.1117/1.JMM.24.4.041406,
+author = {Isaac Wilfried Sanou and Julien Baderot and Vincent Barra and Ali Hallal and L{\'e}o Mazauric and Johann Foucher},
+title = {{Deep-learning-driven automation of inner and outer object segmentation in SEM/TEM imaging for semiconductor metrology}},
+volume = {24},
+journal = {Journal of Micro/Nanopatterning, Materials, and Metrology},
+number = {4},
+publisher = {SPIE},
+pages = {041406},
+keywords = {inner and outer segmentation, metrology, scanning electron microscopy/transmission electron microscopy, annotation, deep learning, Vision Transformer, Image segmentation, Data modeling, Metrology, Semiconductors, Deep learning, Scanning electron microscopy, Education and training, Transmission electron microscopy, Object detection, Shadows},
+year = {2025},
+doi = {10.1117/1.JMM.24.4.041406},
+URL = {https://doi.org/10.1117/1.JMM.24.4.041406}
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9. Defect-aware data augmentation for improving machine learning-based contour extraction from SEM images
+Intro:
+    Data augmentation pipeline
+    Goal is to develop a lightweight and comp-efficeint model for SEM
+    Generating synthetic SEM images to train a more robust model relying on Monte Carlo simulations
+    They use a conditional GAN to generate synthetic images
+Method:
+    Artificially adding efects on the input contours and generating corresponding SEM images conditioned on these modified contours
+    1. Defective contour extraction: real contour extraction from SEM images using model
+    2. Image gen model training: train model to learn the mapping between defectiev contours and SEM images
+    3. Defect introduction: controlled defects introduced into ideal contour images
+    4. Synthetic SEM generation: generate synthetic SEM images based on the defective contour images
+    5. Contour extraction model training: generated images paried with orignal ideal contours
+Results:
+    360 image dataset
+    Clear improvement on contour closire over previous model without the data augmentaiton pipeline
+    Open-line end defects
+
+@article{10.1117/1.JMM.24.3.034005,
+author = {Hongming Zhang and Hawren Fang and Xuefeng Zeng and Le Hong and Yuyang Sun and Renyang Meng and Werner Gillijns and Wei Wu and Yuansheng Ma},
+title = {{Defect-aware data augmentation for improving machine learning-based contour extraction from SEM images}},
+volume = {24},
+journal = {Journal of Micro/Nanopatterning, Materials, and Metrology},
+number = {3},
+publisher = {SPIE},
+pages = {034005},
+keywords = {scanning electron microscopy images, contour extraction, conditional generative adversarial network, BicycleGAN, data augmentation, image generative model, Scanning electron microscopy, Contour modeling, Contour extraction, Data modeling, Education and training, Performance modeling, Machine learning, Image processing, Gallium nitride, Industry},
+year = {2025},
+doi = {10.1117/1.JMM.24.3.034005},
+URL = {https://doi.org/10.1117/1.JMM.24.3.034005}
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10. Few-shot AI Segmentation of Semiconductor Device FIB-SEM Tomography Data
+
+Intro:
+    Typically annotated by experts and cannot be scaled
+    FIB-SEM offers 3D imaging compared to cross-sections
+    AI methods learn domain knowlege by training a segmentation model from pixels labeled by an experts
+    Investigate the minimum number of manually segmented images in order to obtain good segmentation
+Methods:
+    320 image dataset
+    Training model that uses U-net with EfficientNet pretrained
+    IOU quantified how well the model can distiguish objects from their backgrounds in am image by calculating the amount of overlap between the bounding box of the predicted segment and that of the group truth annotation
+Results:
+    Model trained on 20 annotated images was used to segment all 320 images
+    Utilized cloud based computing to do parallel/batched processes
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11. Interactive Image Annotation and AI-assisted Segmentation of TEM Imaged for Automatic CD measurement
+
+Intro:
+    Method to generate a segmentation label for TEM image using DL model that performs segmentaiton based on weak supervision and active learning
+    Achieved accuracy of 98% in 10% of the time compared to the manual method
+Methods:
+    Guide model: assists users in generating GT labels
+    Segmentation model: generate segmentaiton for a new image
+Results:
+    98.3% accuracy in 44 sec
+    Weak labeling and active learning
+    Use of pretrain weights
+
+@inproceedings{10.1117/12.3009407,
+author = {Dongok Kim and Wonhee Lee and Yeny Yim and Byeongkyu Cha and Hansaem Park and Subong Shon and Myungjun Lee},
+title = {{Interactive image annotation and AI-assisted segmentation of TEM images for automatic CD measurement}},
+volume = {12955},
+booktitle = {Metrology, Inspection, and Process Control XXXVIII},
+editor = {Matthew J. Sendelbach and Nivea G. Schuch},
+organization = {International Society for Optics and Photonics},
+publisher = {SPIE},
+pages = {129550Y},
+keywords = {Transmission electron microscope, Automatic metrology, Image segmentation, Generation of ground truth label, Image annotation, Weak labeling, Active learning},
+year = {2024},
+doi = {10.1117/12.3009407},
+URL = {https://doi.org/10.1117/12.3009407}
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+12. Machine learning based SEM Images Contour Extraction data augmentation
+
+Intro:
+    existing  machine  learning-based  contour  extraction  methods  face  the
+problem of  difficulty in  obtaining enough training  datasets, particularly  the lack of effective  SEM  image/contour  pairs,
+resulting in defects in the extracted contours, such as open line ends and discontinuous lines -> cGAN based data augmentation pipeline
+
+    
