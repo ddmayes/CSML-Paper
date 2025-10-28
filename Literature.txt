@@ -3,6 +3,10 @@ Transmission electron microscopy (TEM)
 Focused ion beam-scanning electron microsopy (FIB-SEM)
 Semantic segmentation
 
+https://github.com/BAMresearch/automatic-sem-image-segmentation
+https://github.com/zhang-tao-whu/e2ec
+
+
 1. An effective method of contour extraction for SEM image based on DCNN
 
 - Machine learning based method for contour extraction of SEM images
@@ -368,4 +372,7 @@ Intro:
 problem of  difficulty in  obtaining enough training  datasets, particularly  the lack of effective  SEM  image/contour  pairs,
 resulting in defects in the extracted contours, such as open line ends and discontinuous lines -> cGAN based data augmentation pipeline
 
-    
+
+13. Semiconductor Image Analysis using Data-Efficient Machine Learning
+
+Intro: Transfer learning of a foundational model for semiconductor image segmentation, semi-supervised learning with TEM specific augmentation strategy, self-supervised contrastive pre=training for SEM
