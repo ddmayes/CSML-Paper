@@ -3,8 +3,12 @@ Transmission electron microscopy (TEM)
 Focused ion beam-scanning electron microsopy (FIB-SEM)
 Semantic segmentation
 
+https://github.com/wkentaro/labelme
 https://github.com/BAMresearch/automatic-sem-image-segmentation
 https://github.com/zhang-tao-whu/e2ec
+https://medium.com/data-science/train-fine-tune-segment-anything-2-sam-2-in-60-lines-of-code-928dd29a63b3
+https://medium.com/@stefan.herdy/how-to-augment-images-for-semantic-segmentation-2d7df97544de
+https://medium.com/@stefan.herdy/pytorch-semantic-image-segmentation-b726589662e3
 
 
 1. An effective method of contour extraction for SEM image based on DCNN
@@ -376,3 +380,31 @@ resulting in defects in the extracted contours, such as open line ends and disco
 13. Semiconductor Image Analysis using Data-Efficient Machine Learning
 
 Intro: Transfer learning of a foundational model for semiconductor image segmentation, semi-supervised learning with TEM specific augmentation strategy, self-supervised contrastive pre=training for SEM
+
+
+@Article{jimaging9020046,
+AUTHOR = {Alomar, Khaled and Aysel, Halil Ibrahim and Cai, Xiaohao},
+TITLE = {Data Augmentation in Classification and Segmentation: A Survey and New Strategies},
+JOURNAL = {Journal of Imaging},
+VOLUME = {9},
+YEAR = {2023},
+NUMBER = {2},
+ARTICLE-NUMBER = {46},
+URL = {https://www.mdpi.com/2313-433X/9/2/46},
+PubMedID = {36826965},
+ISSN = {2313-433X},
+ABSTRACT = {In the past decade, deep neural networks, particularly convolutional neural networks, have revolutionised computer vision. However, all deep learning models may require a large amount of data so as to achieve satisfying results. Unfortunately, the availability of sufficient amounts of data for real-world problems is not always possible, and it is well recognised that a paucity of data easily results in overfitting. This issue may be addressed through several approaches, one of which is data augmentation. In this paper, we survey the existing data augmentation techniques in computer vision tasks, including segmentation and classification, and suggest new strategies. In particular, we introduce a way of implementing data augmentation by using local information in images. We propose a parameter-free and easy to implement strategy, the random local rotation strategy, which involves randomly selecting the location and size of circular regions in the image and rotating them with random angles. It can be used as an alternative to the traditional rotation strategy, which generally suffers from irregular image boundaries. It can also complement other techniques in data augmentation. Extensive experimental results and comparisons demonstrated that the new strategy consistently outperformed its traditional counterparts in, for example, image classification.},
+DOI = {10.3390/jimaging9020046}
+}
+
+@misc{azad2023lossfunctionserasemantic,
+      title={Loss Functions in the Era of Semantic Segmentation: A Survey and Outlook}, 
+      author={Reza Azad and Moein Heidary and Kadir Yilmaz and Michael Hüttemann and Sanaz Karimijafarbigloo and Yuli Wu and Anke Schmeink and Dorit Merhof},
+      year={2023},
+      eprint={2312.05391},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2312.05391}, 
+}
+
+
